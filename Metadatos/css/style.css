@@ -1,0 +1,253 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Inicio estilo cabecera */
+.encabezado {
+    background-color:#05000A;
+    padding-bottom: 2%;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 1%;
+}
+
+#title {
+    font-size: 5em;
+    color: #C8C8FF;
+    text-align: center;
+    margin: auto auto 0.2em;
+    cursor: default;
+}
+
+#introduccion {
+    color: white;
+    text-align: center;
+    font-size: large;
+}
+/* Fin estilo cabecera */
+
+/* Inicio estilo imagen */
+#img_metadatos {
+    width: 512px;
+    height: 279px;
+    border-radius: 5%;
+}
+
+.box-image{
+    box-sizing: border-box;
+    width: 522px;
+    height: 289px;
+    background-color: #5032C8;
+    overflow: hidden;
+    position: relative;
+    top: 18%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5%;
+    display: flex;
+    cursor: grab;
+    user-select: none;
+}
+
+.box-image::before {
+    content:'';
+    width: 600px;
+    height: 300px;
+    opacity: 1;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.3) 40%,
+      rgba(255, 255, 255, 0.3) 60%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform-origin: center center;
+    position: absolute;
+    z-index: 10;
+    animation-delay: 1s;
+    animation-name: mask-ani;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+.box-image::after {
+    content: '';
+    width: 500px;
+    height: 50px;
+    opacity: 0;
+    background-color: #fff;
+    transform-origin: center center;
+    position: absolute;
+    z-index: 1;
+    animation-delay: 1s;
+    animation-name: mask-border-ani;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+.box-image img {
+    width: 100%;
+    vertical-align: top;
+    z-index: 5;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+@keyframes mask-ani {
+    0% {
+      transform: rotate(-36deg) translate(-40px, -430px);
+    }
+  
+    50%,
+    100% {
+      transform: rotate(-36deg) translate(-40px, 378px);
+    }
+}
+@keyframes mask-border-ani {
+    0% {
+      opacity: 0.8;
+      transform: rotate(-36deg) translate(-126px, -190px);
+    }
+  
+    50%,
+    100% {
+      opacity: 0.8;
+      transform: rotate(-36deg) translate(-10px, 390px);
+    }
+}
+/* Fin estilo imagen */
+
+/* Inicio estilo contenido */
+#box-definicion {
+    display: flex;
+    position: relative;
+    padding: 4%;
+    background-color: #DCDCFF;
+}
+h1 {
+    font-size: 3.5em;
+    color: #C8C8FF;
+    text-align: center;
+    margin: auto auto 0.2em;
+    cursor: default;
+}
+
+h2 {
+    font-size: 2em;
+    color: #200040;
+    text-align: left;
+    cursor: default;
+}
+
+h3 {
+    font-size: 1.5em;
+    color: #200040;
+    text-align: left;
+    cursor: default;
+}
+
+.parrafo {
+    color: #05000A;
+    text-align: left;
+    font-size: large;
+}
+
+.articulo {
+    background-color:#B4BEF0;
+    padding-bottom: 2%;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 1%;
+}
+
+.title_articulo {
+    font-size: 3.5em;
+    color: #05000A;
+    text-align: center;
+    margin: auto auto 0.2em;
+    cursor: default;
+}
+.texto_articulo {
+    color: #05000A;
+    text-align: center;
+    font-size: large;
+}
+
+/* Fin estilo contenido */
+
+/* Inicio estilo Hiperenlaces P.F: La hoja de estilos 'botones.css' complementa el estilo de los hiperenlaces */
+.hiperenlaces {
+    background-color: #DCDCFF;
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.enlace {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 20px;
+}
+
+/* Fin estilo hiperenlaces */
+
+/* Inicio estylo paginas secundarias */
+
+.contenido {
+    display: flex;
+    position: relative;
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-bottom: 3%;
+    padding-top: 1%;
+    background-color: #DCDCFF;
+}
+
+.lista {
+    display: flex;
+    position: relative;
+    padding-left: 4%;
+    color: #05000A;
+    font-size: large;
+}
+
+.list_custom {
+    list-style-type: none;
+    counter-reset: lista-personalizada;
+    margin: 0;
+}
+
+.list_custom .items {
+    position: relative;
+    font-size: 20px;
+    line-height: 30px;
+    padding: 4px 0 10px 50px;
+    margin-bottom: 10px;
+}
+
+.list_custom .items:before {
+    content: counter(lista-personalizada);
+    counter-increment: lista-personalizada;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 40px;
+    font-weight: bold;
+    padding: 8px 8px 0px 8px;
+    background: #200040;
+    border-radius: 30%;
+    color: white;
+    height: 45px;
+}
+.videos {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
